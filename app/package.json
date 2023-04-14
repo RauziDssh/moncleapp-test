@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@octokit/request": "^6.2.3",
+    "@testing-library/dom": "^9.2.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,14 +13,18 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "typescript": "^5.0.4",
     "web-vitals": "^2.1.4",
     "workbox-cli": "^6.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set PUBLIC_URL=https://jdc-cunningham.github.io/bl-monocle-reactjs-pwa&& workbox generateSW && react-scripts build",
+    "build": "set PUBLIC_URL=https://RauziDssh.github.io/moncleapp-test&& workbox generateSW && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "rm": "rm -rf docs",
+    "mv": "mv build docs",
+    "deploy": "npm run rm && npm run build && npm run mv"
   },
   "eslintConfig": {
     "extends": [
