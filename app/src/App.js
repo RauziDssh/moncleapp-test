@@ -4,6 +4,7 @@ import { ensureConnected } from './bluetooth/js/main';
 import WeightLiftingIcon from './assets/icons/uxwing_weight-lifting.svg';
 import { execMonocle } from './comms';
 import { workoutApp } from './apps/workout/workout';
+import { currentinfoviewerApp } from './apps/currentinfoviewer/currentinfoviewer';
 
 const App = () => {
   const [activeApp, setActiveApp] = useState(false);
@@ -42,6 +43,10 @@ const App = () => {
           <div className="app-img" style={{backgroundImage: `url(${WeightLiftingIcon})`}}></div>
           <p>Workout</p>
         </div>
+        <div className="app" onClick={() => setActiveApp('currentinfoviewer')}>
+          <div className="app-img" style={{backgroundImage: `url(${WeightLiftingIcon})`}}></div>
+          <p>currentinfoviewer</p>
+        </div>
       </div>
       <div className="apps-title">
         <h2>Monocle Apps</h2>
@@ -66,6 +71,9 @@ const App = () => {
     if (activeApp) {
       if (activeApp === 'workout') {
         workoutApp.run(execMonocle);
+      }
+      if (activeApp === 'currentinfoviewer') {
+        currentinfoviewerApp.run(execMonocle);
       }
     }
   }, [activeApp]);
