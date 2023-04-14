@@ -47,8 +47,8 @@ const intervalFunc = () =>
 
 export const currentinfoviewerApp = {
   run: (execMonocle) => {
-    importDeps();
     cmdRunner = execMonocle;
+    importDeps();
     setInterval(intervalFunc, 500);
   },
   leftBtnCallback: () => { // navigate
